@@ -1,0 +1,44 @@
+method: IRNet
+data:
+  dataset: test_set
+  path: data_path
+  classes: null
+  input_type: img
+  train_split: train
+  val_split: val
+  test_split: test
+  points_subsample: 2048
+  points_file: ori_sample.h5
+  points_unpackbits: true
+  points_iou_file: ori_sample.h5
+  img_with_camera: false
+  img_folder: img_choy2016
+  dim: 3
+  img_size: 224
+model:
+  decoder: cbatchnorm
+  encoder: resnet_attention
+  encoder_latent: null
+  decoder_kwargs: {}
+  encoder_kwargs: {}
+  encoder_latent_kwargs: {}
+  c_dim: 256
+  z_dim: 0
+  use_camera: false
+training:
+  out_dir:  out_dir
+test:
+  threshold: 0.5
+  model_file: model.pt
+generation:
+  batch_size: 100000
+  refinement_step: 0
+  vis_n_outputs: 30
+  generate_mesh: true
+  generation_dir: generation_dir
+  use_sampling: false
+  resolution_0: 128
+  upsampling_steps: 0
+  simplify_nfaces: null
+  copy_groundtruth: false
+  copy_input: true

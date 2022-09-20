@@ -1,0 +1,14 @@
+/output
+/out
+/data
+build
+.vscode
+.pytest_cache
+.cache
+*.pyc
+*.pyd
+*.pt
+*.so
+*.o
+*.prof
+.nfs*

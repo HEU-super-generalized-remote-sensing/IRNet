@@ -1,0 +1,41 @@
+method: IRNet
+data:
+  dataset: train_set
+  path: data_path
+  classes: null
+  input_type: img
+  train_split: train
+  val_split: val
+  test_split: test
+  dim: 3
+  points_file: ori_sample.h5
+  points_iou_file: ori_sample.h5
+  points_subsample: 2048
+  points_unpackbits: true
+  img_folder: img_choy2016
+  img_size: 224
+  img_with_camera: false
+  img_augment: false
+model:
+  decoder: cbatchnorm
+  encoder: resnet_attention
+  encoder_latent: null
+  decoder_kwargs: {}
+  encoder_kwargs: {}
+  encoder_latent_kwargs: {}
+  c_dim: 256
+  z_dim: 0
+  use_camera: false
+training:
+  out_dir: out_dir
+  batch_size: 64
+  print_every: 10
+  visualize_every: 100
+  checkpoint_every: 500
+  validate_every: 100
+  backup_every: 500
+  eval_sample: false
+  model_selection_metric: loss
+  model_selection_mode: minimize
+test:
+  threshold: 0.5
